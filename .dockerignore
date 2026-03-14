@@ -1,0 +1,17 @@
+.git
+.gitignore
+venv
+.venv
+eduAI/
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+node_modules
+data
+models
+notebooks
+.vscode
+dist
+build
+*.log
