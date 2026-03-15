@@ -130,7 +130,7 @@ python app/main.py
 * External deployment on Render
 
 **External Services**
-* Cloudinary (Multipart File Storage)
+* Amazon S3 (Multipart File Storage)
 * Railway (Deployment)
 
 ---
@@ -167,10 +167,11 @@ SECRET_KEY=generate_a_strong_random_key_here
 ALGORITHM=HS256
 ACCESS_TOKEN_EXPIRE_MINUTES=1440
 
-# Cloudinary (File Storage)
-CLOUDINARY_CLOUD_NAME=your_cloud_name
-CLOUDINARY_API_KEY=your_api_key
-CLOUDINARY_API_SECRET=your_api_secret
+# Amazon S3 (File Storage)
+AWS_ACCESS_KEY_ID=your_access_key
+AWS_SECRET_ACCESS_KEY=your_secret_key
+AWS_REGION=your_region
+S3_BUCKET_NAME=your_bucket_name
 ```
 
 ### 3. Database Migrations
