@@ -111,15 +111,6 @@ python app/main.py
 - **Docker** for containerization magic
 - **Render** for seamless cloud hosting
 
----
-
-<div align="center">
-
-**Made with ❤️ for the future of education**
-
-</div>
-Our Live Study Room bypasses standard HTTP polling. We built a custom WebSocket `ConnectionManager` that holds open TCP connections in RAM to broadcast live chat to both Web and Mobile clients seamlessly. 
-* **The Killer Feature:** When a student closes their app or laptop, the socket drops. Our server catches the `WebSocketDisconnect` event, calculates the exact session duration in seconds, and asynchronously writes their study hours to the database.
 
 ---
 
