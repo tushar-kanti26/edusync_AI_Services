@@ -20,10 +20,9 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-
-@app.head("/")
+@app.api_route("/", methods=["GET", "HEAD"])
 def hello():
-    return {"message":"Welcome to Edusync AI service!"}
+    return {"message": "Welcome to Edusync AI service!"}
 
 app.include_router(chatbot_router, prefix="/chatbot", tags=["Chatbot"])
 app.include_router(infograph_router, prefix="/infograph", tags=["Infograph"])
