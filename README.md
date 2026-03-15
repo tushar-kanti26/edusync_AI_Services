@@ -186,7 +186,7 @@ uvicorn app.main:app --reload
 ```
 
 The API is now live at https://edusync-ai-services-1.onrender.com.
-Visithttps://edusync-ai-services-1.onrender.com/docs for the interactive Swagger UI!
+Visit https://edusync-ai-services-1.onrender.com/docs for the interactive Swagger UI!
 
 
 
