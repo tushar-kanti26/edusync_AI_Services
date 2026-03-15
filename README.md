@@ -167,11 +167,10 @@ SECRET_KEY=generate_a_strong_random_key_here
 ALGORITHM=HS256
 ACCESS_TOKEN_EXPIRE_MINUTES=1440
 
-# Amazon S3 (File Storage)
-AWS_ACCESS_KEY_ID=your_access_key
-AWS_SECRET_ACCESS_KEY=your_secret_key
-AWS_REGION=your_region
-S3_BUCKET_NAME=your_bucket_name
+# Cloudinary (File Storage)
+CLOUDINARY_CLOUD_NAME=your_cloud_name
+CLOUDINARY_API_KEY=your_api_key
+CLOUDINARY_API_SECRET=your_api_secret
 ```
 
 ### 3. Database Migrations
@@ -185,8 +184,8 @@ python -m alembic upgrade head
 uvicorn app.main:app --reload
 ```
 
-The API is now live at https://edusync-ai-services-1.onrender.com.
-Visit https://edusync-ai-services-1.onrender.com/docs for the interactive Swagger UI!
+The API is now live at http://127.0.0.1:8000.
+Visit http://127.0.0.1:8000/docs for the interactive Swagger UI!
 
 
 
@@ -195,6 +194,7 @@ This project was architected and developed for DoubleSlash 4.0.
 
 Creator :-Tushar Kanti Sinha
 
+For testing m work visit https://edusync-ai-services-1.onrender.com/docs
 
 <div align="center">
 
