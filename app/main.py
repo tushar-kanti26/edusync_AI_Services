@@ -20,7 +20,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-@app.api_route("/", methods=["GET", "HEAD"])
+@app.get("/")
 def hello():
     return {"message": "Welcome to Edusync AI service!"}
 
