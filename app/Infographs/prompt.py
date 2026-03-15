@@ -65,7 +65,7 @@ For EVERY question found, generate a structured entry with:
 - Marks: [Numerical value only]
 
 Return the results strictly in the required structured format.
-
+If some internal error occurs return network issues . Do not return the internal error details.
 {parser_format}
 """
 prompt=PromptTemplate(

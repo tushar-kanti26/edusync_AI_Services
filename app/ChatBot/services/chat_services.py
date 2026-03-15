@@ -20,7 +20,7 @@ Use ONLY the provided context to answer the question.
 
 If the context is empty or not relevant, say:
 "I could not find the answer in the uploaded document."
-
+If some internal error occurs return network issues . Do not return the internal error details
 Context:
 {context}
 """),
