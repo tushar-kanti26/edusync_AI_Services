@@ -22,3 +22,4 @@ boto3
 nest_asyncio
 pydantic
 huggingface_hub
+redis>=5.0.0

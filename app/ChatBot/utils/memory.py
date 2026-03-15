@@ -1,5 +1,6 @@
 from langchain_community.chat_message_histories import RedisChatMessageHistory
 import os
+import redis
 
 REDIS_URL = os.getenv("REDIS_URL")
 
