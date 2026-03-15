@@ -195,7 +195,7 @@ This project was architected and developed for DoubleSlash 4.0.
 
 Creator :-Tushar Kanti Sinha
 
-For testing my work visit https://edusync-ai-services-1.onrender.com/docs
+For testing my work visit https://edusync-ai-services-1.onrender.com
 
 <div align="center">
 
