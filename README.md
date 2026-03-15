@@ -9,6 +9,7 @@
 [![Redis](https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white)](https://redis.io/)
 [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-336791?style=for-the-badge&logo=postgresql&logoColor=white)](https://www.postgresql.org/)
 [![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/)
+[![Amazon S3](https://img.shields.io/badge/Amazon_S3-569A31?style=for-the-badge&logo=amazon-s3&logoColor=white)](https://aws.amazon.com/s3/)
 [![Render](https://img.shields.io/badge/Render-46E3B7?style=for-the-badge&logo=render&logoColor=white)](https://render.com/)
 
 **Revolutionizing Education with AI-Driven Insights and Seamless Collaboration** 🚀
@@ -21,7 +22,7 @@
 
 ## 🌟 What is EduSync?
 
-EduSync is a groundbreaking educational platform that leverages advanced AI technologies to synchronize learning experiences across students, educators, and institutions. By integrating **LangChain** for intelligent language processing, **Pinecone** for vector-based knowledge retrieval, **Redis** for lightning-fast caching, **PostgreSQL** for robust data management, **Docker** for seamless deployment, and **Render** for scalable hosting, EduSync creates a unified hub where knowledge flows freely and efficiently.
+EduSync is a groundbreaking educational platform that leverages advanced AI technologies to synchronize learning experiences across students, educators, and institutions. By integrating **LangChain** for intelligent language processing, **Pinecone** for vector-based knowledge retrieval, **Redis** for lightning-fast caching, **PostgreSQL** for robust data management, **Amazon S3** for scalable storage, **Docker** for seamless deployment, and **Render** for scalable hosting, EduSync creates a unified hub where knowledge flows freely and efficiently.
 
 Whether you're a student seeking instant answers, a professor managing course materials, or an institution tracking progress, EduSync adapts to your needs with AI-powered precision.
 
@@ -33,22 +34,8 @@ Whether you're a student seeking instant answers, a professor managing course ma
 - **Intelligent Chatbot**: Powered by LangChain, our chatbot provides contextual, conversational learning assistance.
 - **Smart Document Analysis**: Extract insights, generate summaries, and create quizzes from uploaded materials using advanced NLP.
 - **Vector Search**: Pinecone enables semantic search across vast knowledge bases for instant, relevant information retrieval.
+- **Intelligent Analyzer**: Extracts past question papers from the material hub, predicts topic-wise importance (high, medium, low) for different subjects, and presents insights with color-coded indicators (red for high, yellow for medium, green for low).
 
-### 📚 Collaborative Learning Environment
-- **Real-Time Collaboration**: WebSocket-powered study rooms for live group sessions.
-- **Material Sharing**: Secure upload and verification of educational resources.
-- **Discussion Forums**: AI-moderated forums with intelligent answer ranking.
-
-### ⚡ Performance & Scalability
-- **Redis Caching**: Ultra-fast data retrieval and session management.
-- **PostgreSQL Database**: Reliable, ACID-compliant data storage for all educational data.
-- **Docker Containerization**: Easy deployment and scaling across environments.
-- **Render Hosting**: Cloud-native deployment for global accessibility.
-
-### 🔒 Security & Access Control
-- **Role-Based Access Control**: Tailored permissions for students, teachers, and administrators.
-- **Data Encryption**: End-to-end encryption for sensitive educational data.
-- **Audit Trails**: Comprehensive logging for compliance and security monitoring.
 
 ---
 
@@ -61,6 +48,7 @@ Whether you're a student seeking instant answers, a professor managing course ma
 | 🌲 **Vector Database** | Pinecone | Semantic search and embeddings |
 | 🔴 **Caching** | Redis | High-performance data caching |
 | 🐘 **Database** | PostgreSQL | Relational data storage |
+| ☁️ **Storage** | Amazon S3 | Scalable cloud object storage |
 | 🐳 **Containerization** | Docker | Application packaging |
 | ☁️ **Hosting** | Render | Cloud deployment platform |
 
@@ -71,13 +59,13 @@ Whether you're a student seeking instant answers, a professor managing course ma
 ### Prerequisites
 - 🐳 Docker installed
 - 🐍 Python 3.8+
-- 🔑 API keys for Pinecone, OpenAI (for LangChain), and Render
+- 🔑 API keys for Pinecone, Gemini (for LangChain), Amazon S3, and Render
 
 ### Installation
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/your-username/edusync.git
+   git clone https://github.com/tushar-kanti26/edusync_AI_Services.git
    cd edusync
    ```
 
@@ -112,48 +100,6 @@ pip install -r requirements.txt
 # Run the application
 python app/main.py
 ```
-
----
-
-## 📖 Usage
-
-### For Students
-1. **Sign up/Login**: Create your account and join your class.
-2. **Access Materials**: Browse verified course materials and AI-generated summaries.
-3. **Ask Questions**: Use the AI chatbot for instant help or post in discussion forums.
-4. **Study Sessions**: Join live study rooms for collaborative learning.
-
-### For Educators
-1. **Upload Content**: Share PDFs, videos, and other materials.
-2. **AI Tools**: Generate quizzes and infographics from your content.
-3. **Monitor Progress**: Track student engagement and performance.
-4. **Moderate Discussions**: Verify answers and maintain quality in forums.
-
-### For Administrators
-1. **Manage Users**: Control access and roles across the platform.
-2. **Analytics**: View comprehensive usage and performance metrics.
-3. **System Configuration**: Customize settings for your institution.
-
----
-
-## 🤝 Contributing
-
-We welcome contributions from the community! Here's how you can get involved:
-
-1. 🍴 Fork the repository
-2. 🌿 Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. 💻 Commit your changes (`git commit -m 'Add amazing feature'`)
-4. 🚀 Push to the branch (`git push origin feature/amazing-feature`)
-5. 🔄 Open a Pull Request
-
-Please read our [Contributing Guidelines](CONTRIBUTING.md) for more details.
-
----
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
 ---
 
 ## 🙏 Acknowledgments
@@ -171,14 +117,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **Made with ❤️ for the future of education**
 
-[🌐 Website](https://edusync.render.com) | [📧 Contact](mailto:team@edusync.com) | [🐛 Report Issues](https://github.com/your-username/edusync/issues)
-
 </div>
 Our Live Study Room bypasses standard HTTP polling. We built a custom WebSocket `ConnectionManager` that holds open TCP connections in RAM to broadcast live chat to both Web and Mobile clients seamlessly. 
 * **The Killer Feature:** When a student closes their app or laptop, the socket drops. Our server catches the `WebSocketDisconnect` event, calculates the exact session duration in seconds, and asynchronously writes their study hours to the database.
-
-### 3. Bulletproof Security
-Instead of just basic login, we implemented **Role-Based Access Control (RBAC)** at the endpoint level. If a student maliciously attempts to `PATCH` an answer to mark it as official, the FastAPI gatekeeper intercepts the token, checks the `RoleEnum`, and blocks it with a `403 Forbidden`.
 
 ---
 
@@ -213,7 +154,7 @@ Get the backend engine running on your local machine in under 2 minutes.
 
 ### 1. Clone & Initialize
 ```bash
-git clone [https://github.com/your-repo/edusync-backend.git](https://github.com/tushar-kanti26/edusync_AI_Services.git)
+git clone https://github.com/tushar-kanti26/edusync_AI_Services.git
 cd edusync-backend
 
 # Create and activate virtual environment
@@ -260,7 +201,7 @@ Visit http://127.0.0.1:8000/docs for the interactive Swagger UI!
 ## 🤝 Team Byte Force
 This project was architected and developed for DoubleSlash 4.0.
 
-Tushar Kanti Sinha
+Creator :-Tushar Kanti Sinha
 
 
 <div align="center">
