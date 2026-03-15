@@ -185,6 +185,7 @@ uvicorn app.main:app --reload
 ```
 
 The API is now live at http://127.0.0.1:8000.
+</br>
 Visit http://127.0.0.1:8000/docs for the interactive Swagger UI!
 
 
